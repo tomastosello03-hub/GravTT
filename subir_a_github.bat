@@ -2,32 +2,22 @@
 title Subir GravTT a GitHub
 cd /d "%~dp0"
 echo ========================================================
-echo          SUBIR GRAVTT A TU REPOSITORIO DE GITHUB
+echo          SUBIENDO GRAVTT A TU REPOSITORIO GITHUB
 echo ========================================================
 echo.
-set /p REPO_URL="Pega aqui la URL de tu repositorio de GitHub (ej: https://github.com/usuario/GravTT.git): "
-if "%REPO_URL%"=="" (
-    echo No ingresaste ninguna URL. Operacion cancelada.
-    pause
-    exit /b
-)
-
+echo Repositorio destino: https://github.com/tomastosello03-hub/GravTT.git
 echo.
-echo Enlazando con %REPO_URL%...
-git remote remove origin 2>nul
-git remote add origin %REPO_URL%
-git branch -M main
-
-echo Subiendo archivos a GitHub...
 git push -u origin main
-
+echo.
 if errorlevel 1 (
-    echo.
-    echo Ocurrio un error al subir. Verifica tus credenciales o permisos de GitHub.
-) else (
-    echo.
     echo ========================================================
-    echo   FELICITACIONES! GravTT fue subido exitosamente a GitHub!
+    echo  Si es la primera vez que subes a GitHub desde esta PC,
+    echo  inicia sesion en la ventana emergente o pega tu Token.
+    echo ========================================================
+) else (
+    echo ========================================================
+    echo   FELICITACIONES! GravTT fue subido con exito a GitHub!
     echo ========================================================
 )
+echo.
 pause
