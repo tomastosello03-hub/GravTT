@@ -1,6 +1,8 @@
 @echo off
 title Subir GravTT a GitHub
 cd /d "%~dp0"
+set "PATH=C:\Users\tomas\AppData\Local\Programs\Git\cmd;C:\Program Files\Git\cmd;%PATH%"
+
 echo ========================================================
 echo          SUBIENDO GRAVTT A TU REPOSITORIO GITHUB
 echo ========================================================
